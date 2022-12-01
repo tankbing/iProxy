@@ -1032,7 +1032,7 @@ module.exports = function (req, res, next) {
                     headers['__iproxy-rules__'] = strwrap(JSON.stringify(ruleRaw) || 'none');
                     headers['__iproxy-real-url__'] = strwrap(req.realUrl || 'none');
   
-                    headers['__iproxy-help__'] = 'See https://github.com/xcodebuild/iproxy';
+                    headers['__iproxy-help__'] = 'See https://www.heigoou.com';
 
                     isHtml = isHtml || !headers['content-type'];
                     if (

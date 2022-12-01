@@ -10,9 +10,9 @@ export const ICON_TEMPLATE_PATH = path.join(FILES_DIR, 'iconTemplate.png');
 
 export const RULE_STORE_KEY = 'iproxy-rule';
 
-export const GITHUB_PROJECT_PAGE = 'https://github.com/xcodebuild/iproxy';
-export const NEW_ISSUE_PAGE = 'https://github.com/xcodebuild/iproxy/issues/new';
-export const DOCUMENT_URL = 'https://www.yuque.com/iproxy';
+export const GITHUB_PROJECT_PAGE = 'https://www.heigoou.com';
+export const NEW_ISSUE_PAGE = 'https://www.heigoou.com';
+export const DOCUMENT_URL = 'https://www.heigoou.com';
 
 // @ts-ignore
 export const IS_BUILD_FOR_PR = __BUILD_FOR_TRAVIS_PR__ ? true : false;

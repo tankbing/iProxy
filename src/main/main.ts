@@ -136,10 +136,10 @@ async function initSplashScreen() {
             'data:text/html;charset=UTF-8,' +
             encodeURIComponent(
                 splash({
-                    brand: 'Build with ♥',
-                    productName: `iProxy`,
+                    brand: 'Build with ♥ heigoou.com',
+                    productName: `黑狗~`,
                     text: `Loading - ${version} ...`,
-                    website: 'https://github.com/xcodebuild/iproxy',
+                    website: 'https://www.heigoou.com',
                     logo: logoIcon,
                     color: '#1890ff',
                 }),

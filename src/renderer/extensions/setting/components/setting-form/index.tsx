@@ -178,7 +178,7 @@ class InnerSettingForm extends React.Component {
                     >
                         <Button
                             onClick={() => {
-                                shell.openExternal('https://github.com/xcodebuild/iproxy');
+                                shell.openExternal('https://www.heigoou.com');
                             }}
                             className="action-btn"
                         >

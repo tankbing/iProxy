@@ -6,9 +6,9 @@ import React from 'react';
 import logger from 'electron-log';
 import path from 'path';
 
-const handleHomepage = () => remote.shell.openExternal('https://yuque.com/iproxy?from=desktop');
-const handleIssue = () => remote.shell.openExternal('https://github.com/xcodebuild/iproxy/issues');
-const handleGithub = () => remote.shell.openExternal('https://github.com/xcodebuild/iproxy');
+const handleHomepage = () => remote.shell.openExternal('https://www.heigoou.com');
+const handleIssue = () => remote.shell.openExternal('https://www.heigoou.com');
+const handleGithub = () => remote.shell.openExternal('https://www.heigoou.com');
 const handleShowLogs = () => {
     const logFile = logger.transports.file.file as string;
     const logDirectory = path.dirname(logFile);

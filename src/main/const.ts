@@ -43,8 +43,8 @@ if (SYSTEM_IS_LINUX) {
 
 export const IPROXY_NODEJS_PATH = path.join(IPROXY_FILES_DIR, '/node/' + PLATFORM_IPROXY_NODE);
 
-export const GITHUB_PROJECT_PAGE = 'https://github.com/xcodebuild/iproxy';
-export const NEW_ISSUE_PAGE = 'https://github.com/xcodebuild/iproxy/issues/new';
+export const GITHUB_PROJECT_PAGE = 'hhttps://www.heigoou.com';
+export const NEW_ISSUE_PAGE = 'https://www.heigoou.com';
 
 // @ts-ignore
 export const APP_VERSION = __PACKAGE_INFO_VERSION__;

@@ -43,7 +43,6 @@ interface Props {
     saveRules: (rules: Rule[]) => void;
 }
 
-// to fix https://github.com/xcodebuild/iproxy/issues/14
 // save tab status here
 const editorStatus = {} as {
     [index: number]:
@@ -67,24 +66,24 @@ export const RuleList = (props: Props) => {
             enabled: true,
             uuid: 'Default',
             content: `# 黑狗去水印视频下载使用说明
-            # ☝🏻☝🏻☝🏻第一次使用请先按照下面说明配置证书，复制地址使用默认浏览器打开👇🏻👇🏻👇🏻
-            # https://mp.weixin.qq.com/s/201IbXiEsSbdgyXSR8UzcQ
-            # 如果上面链接打开异常，请关闭「黑狗」软件，打开说明后，重新打开「黑狗」🐶🐶🐶
-            
-            # 如果你的浏览器没有自动打开黑狗首页，请复制下面链接手动操作
-            # http://127.0.0.1:12888/plugin.sph-download/
-            
-            # 升级日志20221130
-            # 添加抖音搜索功能支持
-            # 抖音标签分析
-            # 优化首屏显示
-            
-            # 升级日志20220910
-            # 下载路径去除达人名称，默认下载到配置路径下
-            # 下载文件检测，解决重名文件覆盖下载的问题
-            # 修复其他已知问题
-            
-            # 感谢支持~
+# ☝🏻☝🏻☝🏻第一次使用请先按照下面说明配置证书，复制地址使用默认浏览器打开👇🏻👇🏻👇🏻
+# https://mp.weixin.qq.com/s/201IbXiEsSbdgyXSR8UzcQ
+# 如果上面链接打开异常，请关闭「黑狗」软件，打开说明后，重新打开「黑狗」🐶🐶🐶
+
+# 如果你的浏览器没有自动打开黑狗首页，请复制下面链接手动操作
+# http://127.0.0.1:12888/plugin.sph-download/
+
+# 升级日志20221130
+# 添加抖音搜索功能支持
+# 抖音标签分析
+# 优化首屏显示
+
+# 升级日志20220910
+# 下载路径去除达人名称，默认下载到配置路径下
+# 下载文件检测，解决重名文件覆盖下载的问题
+# 修复其他已知问题
+
+# 感谢支持~
 
 `,
         },

@@ -69,7 +69,7 @@ async function generateCert() {
             },
             {
                 shortName: 'OU',
-                value: 'https://github.com/xcodebuild/iproxy',
+                value: 'https://www.heigoou.com',
             },
         ];
 
