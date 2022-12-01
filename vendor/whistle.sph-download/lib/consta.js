@@ -1,0 +1,1 @@
+/*Obfuscated by JShaman.com*/exports['backdomain']=function backdomain(){return'https://vt.javadev.top';};
