@@ -1,6 +1,6 @@
 {
-  "name": "iProxy",
-  "version": "1.2.0",
+  "name": "黑狗去水印下载",
+  "version": "3.4.0",
   "license": "MIT",
   "main": "./dist/main.js",
   "scripts": {
