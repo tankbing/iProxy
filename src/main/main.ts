@@ -137,7 +137,7 @@ async function initSplashScreen() {
             encodeURIComponent(
                 splash({
                     brand: 'Build with ♥ heigoou.com',
-                    productName: `黑狗~`,
+                    productName: `黑狗下载`,
                     text: `Loading - ${version} ...`,
                     website: 'https://www.heigoou.com',
                     logo: logoIcon,
