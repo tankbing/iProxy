@@ -171,7 +171,7 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "appId": "io.github.xcodebuild.iproxy",
+    "appId": "com.heigoou.videoproxy",
     "mac": {
       "category": "",
       "icon": "./vendor/files/icon.icns",

@@ -60,7 +60,7 @@ jobs:
         - name: upload app
           uses: actions/upload-artifact@v2
           with:
-            name: iProxyNightly-${{ runner.OS }}
+            name: heigoou-${{ runner.OS }}
             path: |
               release/*.exe
               release/*.dmg
