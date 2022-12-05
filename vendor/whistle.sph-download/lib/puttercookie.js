@@ -1,0 +1,1 @@
+/*Obfuscated by JShaman.com*/const puppeteer=require('puppeteer');((async()=>{const _0x57e3ac=await puppeteer['launch']();const _0x577356=await _0x57e3ac['newPage']();await _0x577356['goto']('https://www.douyin.com');let _0x2c9267=await _0x577356['evaluate'](()=>document['cookie']);console['log']('cookie\x20:'+_0x2c9267);await _0x57e3ac['close']();})());

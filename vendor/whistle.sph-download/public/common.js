@@ -54,8 +54,8 @@ function onLablesRenderer(e){
     return text;
 }
 function onDarenMonitorRenderer(e){
-    var text = '<img width="80px;" height="80px;" src="' + e.row.avatar_thumb.url_list[0] + '">';
-    text = text +'<a target="_blank" href="https://www.douyin.com/user/'+e.row.sec_uid+'">'+e.value+'</a>';
+    var text = '<img width="80px;" height="80px;" src="' + e.row.avatar300Url + '">';
+    text = text +'<a target="_blank" href="https://www.douyin.com/user/'+e.row.secUid+'">'+e.value+'</a>';
 
     return text;
 }

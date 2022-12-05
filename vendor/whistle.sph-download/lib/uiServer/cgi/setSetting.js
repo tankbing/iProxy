@@ -1,1 +1,53 @@
-/*Obfuscated by JShaman.com*/const fs=require('fs');const {backdomain:backdomain}=require('./../../consta');const request=require('sync-request');const {set:setConfig}=require('./../../appContext');const {mkdirsSync:mkdir,downCountKey:countKey,Exts:Exts,Type:Type,GetFileName:GetFileName,GetExt:GetExt,wildcard:wildcard}=require('./../../utils');module['exports']=_0x55bf4a=>{const {localStorage:_0x4de784}=_0x55bf4a['req'];let {path:_0x167daf,code:_0x529d65,globalVideo:_0x4c6afb,sphZb:_0x3cd5b7}=_0x55bf4a['request']['body'];let _0x179689={'success':0x1,'message':''};if(!_0x529d65||!_0x167daf){_0x179689['message']='参数错误';_0x179689['success']=0x91c97^0x91c95;_0x55bf4a['body']=_0x179689;return;}if(!fs['existsSync'](_0x167daf)){mkdir(_0x167daf);console['log']('目录创建成功：'+_0x167daf);}else{console['log']('目录存在，直接使用：'+_0x167daf);}console['log']('文件存储路径：'+_0x167daf);_0x4de784['setProperty']('videoDownLoadPath',_0x167daf);_0x4de784['setProperty']('globalVideo',_0x4c6afb);_0x4de784['setProperty']('sphZb',_0x3cd5b7);_0x4de784['setProperty']('fullDownLoadCode',_0x529d65);setConfig('downLoadPath',_0x167daf);setConfig('fullDownLoadCode',_0x529d65);const _0x36f60f=request('GET',backdomain()+'/sph/hg/validate/'+_0x529d65)['getBody']()['toString']();const _0x23a222=JSON['parse'](_0x36f60f);_0x179689['userInfo']=_0x23a222['body'];if(_0x23a222['success']==(0x1fb01^0x1fb00)){const _0x35d162=_0x23a222['body']['openId'];_0x4de784['setProperty']('user_open_id',_0x35d162);setConfig('user_open_id',_0x35d162);}else{_0x179689['success']=_0x23a222['success'];_0x179689['message']=_0x23a222['message'];}_0x55bf4a['body']=_0x179689;};
+// const path = require("path");
+const fs = require("fs");
+const { backdomain: backdomain } = require("./../../consta")
+const request = require('sync-request');
+const { set: setConfig } = require('./../../appContext');
+const { mkdirsSync: mkdir, downCountKey: countKey, Exts: Exts, Type: Type, GetFileName: GetFileName, GetExt: GetExt, wildcard: wildcard } = require('./../../utils');
+module.exports = (ctx) => {
+    const { localStorage } = ctx.req;
+    let { path, code, globalVideo, sphZb } = ctx.request.body;
+    let result = {
+        success: 1,
+        message: ''
+    };
+
+    if (!code || !path) {
+        result.message = '参数错误';
+        result.success = 2;
+        ctx.body = result;
+        return;
+    }
+
+
+    if (!fs.existsSync(path)) {
+        mkdir(path);
+        console.log('目录创建成功：' + path);
+    } else {
+        console.log('目录存在，直接使用：' + path);
+    }
+    console.log('文件存储路径：' + path);
+
+    localStorage.setProperty('videoDownLoadPath', path);
+    localStorage.setProperty('globalVideo', globalVideo);
+    localStorage.setProperty('sphZb', sphZb);
+    localStorage.setProperty('fullDownLoadCode', code);
+    setConfig('downLoadPath', path);
+    setConfig('fullDownLoadCode', code);
+    
+    // const machineUUID = localStorage.getProperty('machine_uuid');
+
+    const codeBody = request('GET', backdomain() + '/sph/hg/validate/' + code).getBody().toString();
+    const codeInfo = JSON.parse(codeBody);
+    result.userInfo = codeInfo.body;
+    if (codeInfo.success == 1) {
+        const openId = codeInfo.body.openId;
+        localStorage.setProperty('user_open_id', openId);
+        setConfig('user_open_id', openId);
+    } else {
+        result.success = codeInfo.success;
+        result.message = codeInfo.message;
+    }
+
+    ctx.body = result;
+};

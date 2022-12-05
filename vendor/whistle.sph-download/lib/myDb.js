@@ -1,1 +1,75 @@
-/*Obfuscated by JShaman.com*/let filterSet=new Set();let allDataArray=[];Array['prototype']['indexOf']=function(_0x20aee9){for(var _0x1d064c=0x985b0^0x985b0;_0x1d064c<this['length'];_0x1d064c++){if(this[_0x1d064c]==_0x20aee9)return _0x1d064c;}return-(0x7fdf3^0x7fdf2);};Array['prototype']['remove']=function(_0xe7bc4){var _0x29f8fd=this['indexOf'](_0xe7bc4);if(_0x29f8fd>-(0xcbedc^0xcbedd)){this['splice'](_0x29f8fd,0x85f15^0x85f14);}};exports['remove']=function(_0x413101){allDataArray['remove'](_0x413101);};exports['add']=function(_0x4a7aba,_0xee954f){_0x4a7aba=typeof _0x4a7aba==='string'?_0x4a7aba['trim']():'';if(!_0x4a7aba){return;}if(!filterSet['has'](_0x4a7aba)){console['log']('----加入数组');allDataArray['push'](_0xee954f);}filterSet['add'](_0x4a7aba);};exports['has']=function(_0x2853f1){_0x2853f1=typeof _0x2853f1==='string'?_0x2853f1['trim']():'';if(!_0x2853f1){return!![];}return filterSet['has'](_0x2853f1);};exports['clear']=function(){filterSet['clear']();allDataArray=[];};exports['page']=function page(_0xf57401,_0x22d0fd){if(!_0x22d0fd){_0x22d0fd=0x391fc^0x391f6;}if(_0xf57401<(0xe2eff^0xe2efe)){_0xf57401=0x66eda^0x66edb;}console['log']('set\x20size\x20is\x20',filterSet['size']);for(var _0x56bb1a of filterSet){console['log']('------'+_0x56bb1a);}var _0x38a7fc=(_0xf57401-(0xd1f58^0xd1f59))*_0x22d0fd;var _0x4c70b1=_0x38a7fc+_0x22d0fd;if(_0x38a7fc>allDataArray['length']){_0x38a7fc=allDataArray['length']-(0x37abe^0x37abf);}if(_0x4c70b1>allDataArray['length']){_0x4c70b1=allDataArray['length']-(0x3ef93^0x3ef92);}console['log']('分页信息：',_0x38a7fc,_0x4c70b1);var _0xbd498c=[];for(var _0x4e5bf4=_0x38a7fc;_0x4e5bf4<_0x4c70b1;_0x4e5bf4++){var _0x1fe69a=allDataArray[_0x4e5bf4];if(_0x1fe69a){_0xbd498c['push'](_0x1fe69a);}}return _0xbd498c;};exports['all']=function all(){return allDataArray;};
+let filterSet = new Set();
+let allDataArray = [];
+Array.prototype.indexOf = function (val) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] == val) return i;
+  }
+  return -1;
+};
+Array.prototype.remove = function (val) {
+  var index = this.indexOf(val);
+  if (index > -1) {
+    this.splice(index, 1);
+  }
+};
+exports.remove = function (val) {
+  allDataArray.remove(val);
+  // 只删除数组元素，已加载标记不处理
+};
+
+exports.add = function (text,url) {
+  text = typeof text === 'string' ? text.trim() : '';
+  if (!text) {
+    return;
+  }
+  if (!filterSet.has(text)) {
+    console.log('----加入数组')
+    allDataArray.push(url);
+  }
+  filterSet.add(text);
+};
+exports.has = function (text) {
+  text = typeof text === 'string' ? text.trim() : '';
+  if (!text) {
+    return true;
+  }
+  return filterSet.has(text);
+};
+exports.clear = function () {
+  filterSet.clear();
+  allDataArray = [];
+};
+exports.page = function page(number, size) {
+  if (!size) {
+    size = 10;
+  }
+  if (number < 1) {
+    number = 1;
+  }
+  console.log('set size is ',filterSet.size);
+  for(var item of filterSet){
+    console.log('------'+item)
+  }
+  var start = (number - 1) * size;
+  var end = start + size;
+
+  if (start > allDataArray.length) {
+    start = allDataArray.length - 1;
+  }
+  if (end > allDataArray.length) {
+    end = allDataArray.length - 1;
+  }
+  console.log('分页信息：', start, end)
+  var data = [];
+  for (var i = start; i < end; i++) {
+    var d = allDataArray[i];
+    if (d) {
+      data.push(d);
+    }
+  }
+  return data;
+};
+
+exports.all = function all() {
+  return allDataArray;
+};

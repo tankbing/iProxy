@@ -1,1 +1,22 @@
-/*Obfuscated by JShaman.com*/const schedule=require('node-schedule');const {runDownThread:runDownThread}=require('./dyMonitorThread');exports['startScheduleJob']=function startScheduleJob(_0x184180){runDownThread();const _0x19350b=schedule['scheduleJob']('scheduleJob-dy-ps',_0x184180,function(_0x34ad99){console['log']('This\x20job\x20was\x20supposed\x20to\x20run\x20at\x20'+_0x34ad99+',\x20but\x20actually\x20ran\x20at\x20'+new Date());runDownThread();console['log']('调用了下载之后');});return _0x19350b;};exports['stopScheduleJob']=function stopScheduleJob(){if(schedule['scheduledJobs']['scheduleJob-dy-ps']){schedule['scheduledJobs']['scheduleJob-dy-ps']['cancel']();}};exports['getRunningScheduleJob']=function getRunningScheduleJob(){return schedule['scheduledJobs'];};
+const schedule = require('node-schedule');
+const { runDownThread: runDownThread } = require('./dyMonitorThread');
+
+exports.startScheduleJob = function startScheduleJob(cron) {
+    // cancelJob
+    runDownThread();
+    const job = schedule.scheduleJob('scheduleJob-dy-ps', cron, function (fireDate) {
+        console.log('This job was supposed to run at ' + fireDate + ', but actually ran at ' + new Date());
+        runDownThread();
+        console.log('调用了下载之后');
+    });
+    return job;
+};
+exports.stopScheduleJob = function stopScheduleJob() {
+    if (schedule.scheduledJobs['scheduleJob-dy-ps']) {
+        schedule.scheduledJobs['scheduleJob-dy-ps'].cancel();
+    }
+
+}
+exports.getRunningScheduleJob = function getRunningScheduleJob() {
+    return schedule.scheduledJobs;
+}
