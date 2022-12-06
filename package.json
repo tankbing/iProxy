@@ -18,6 +18,8 @@
     "dist-codesign": "npm run build && electron-builder --mac --win --x64 --publish never",
     "pack": "npm run dist --dir -c.compression=store -c.mac.identity=null",
     "lint": "eslint ./src/**/*.ts ./src/**/*.tsx --fix",
+    "clean:ff:win": "npx rimraf vendor/whistle.sph-download/bin/ffmpeg",
+    "clean:ff:mac": "npx rimraf vendor/whistle.sph-download/bin/ffmpeg.exe",
     "upgrade:whistle": "git subtree pull --prefix=vendor/whistle https://github.com/avwo/whistle master --squash && npm run install-deps && npm run update:node_modules",
     "update:node_modules": "npx rimraf vendor/files/node/modules && cd vendor/files/node && echo {} > package.json && yarn add ../../whistle-start ../../whistle whistle.vase ../../whistle.scriptfile ../../whistle.chii-internal ../../whistle.sph-download -S && mv node_modules modules && cd ../../.. && npm run update:zip",
     "update:zip": "cd vendor && npx rimraf files.zip && bestzip files.zip files/",

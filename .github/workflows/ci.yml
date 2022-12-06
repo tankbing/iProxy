@@ -41,10 +41,12 @@ jobs:
           run: |
             if [[ "$RUNNER_OS" == "Windows" ]]; then
               npm run dist:win
+              npm run clean:ff:win
             fi
 
             if [[ "$RUNNER_OS" == "macOS" ]]; then
               npm run dist:mac
+              npm run clean:ff:mac
             fi
 
             if [[ "$RUNNER_OS" == "Linux" ]]; then
